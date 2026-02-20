@@ -5,7 +5,7 @@ import { plants } from "@/lib/plant-data"
 import { BottomNav } from "@/components/bottom-nav"
 import {
   IconBell,
-  IconCloudSun,
+  IconSunHigh,
   IconMessageChatbot,
   IconScan,
   IconChartBar,
@@ -46,7 +46,7 @@ export function HomeScreen() {
           <div className="bg-primary rounded-2xl p-4 text-primary-foreground">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <IconCloudSun size={20} />
+                <IconSunHigh size={20} />
                 <span className="text-sm font-medium">Today&apos;s Weather</span>
               </div>
               <div className="px-2.5 py-1 bg-primary-foreground/20 rounded-full text-xs font-medium">
