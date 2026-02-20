@@ -68,7 +68,7 @@ export function SettingsScreen() {
           </div>
           <div>
             <h3 className="text-base font-bold text-foreground">Gardener</h3>
-            <p className="text-sm text-muted-foreground">gardener@plantcare.ai</p>
+            <p className="text-sm text-muted-foreground">gardener@canopy.ai</p>
           </div>
         </div>
 

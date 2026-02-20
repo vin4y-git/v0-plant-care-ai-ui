@@ -27,7 +27,7 @@ const quickQuestions = [
 const initialMessages: Message[] = [
   {
     id: "1",
-    text: "Hello! I'm your PlantCare AI assistant. I can help you with plant identification, disease diagnosis, care tips, and more. How can I help you today?",
+    text: "Hello! I'm your Canopy assistant. I can help you with plant identification, disease diagnosis, care tips, and more. How can I help you today?",
     isBot: true,
   },
 ]
@@ -71,7 +71,7 @@ export function AIChatScreen() {
           <CanopyMascot pose="chatting" size="small" circular />
         </div>
         <div>
-          <h1 className="text-sm font-bold text-foreground">PlantCare AI</h1>
+          <h1 className="text-sm font-bold text-foreground">Canopy</h1>
           <p className="text-xs text-primary font-medium">Online</p>
         </div>
       </div>

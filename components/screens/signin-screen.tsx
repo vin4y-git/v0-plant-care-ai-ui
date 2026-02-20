@@ -15,7 +15,7 @@ export function SignInScreen() {
       <div className="flex flex-col items-center gap-3 mb-10">
         <CanopyMascot pose="waving" size="large" animation="blink" />
         <h1 className="text-xl font-bold text-foreground">Welcome Back</h1>
-        <p className="text-sm text-muted-foreground">Sign in to continue to PlantCare AI</p>
+        <p className="text-sm text-muted-foreground">Sign in to continue to Canopy</p>
       </div>
 
       {/* Form */}

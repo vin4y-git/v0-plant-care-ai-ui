@@ -10,8 +10,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'PlantCare AI',
-  description: 'AI-powered plant health and farming assistant app',
+  title: 'Canopy',
+  description: 'AI-powered plant care companion',
   generator: 'v0.app',
   icons: {
     icon: [

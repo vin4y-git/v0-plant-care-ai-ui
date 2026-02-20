@@ -21,7 +21,7 @@ export function SignUpScreen() {
           <CanopyMascot pose="happy" size="small" />
           <h1 className="text-xl font-bold text-foreground">Create Account</h1>
         </div>
-        <p className="text-sm text-muted-foreground">Join PlantCare AI and start your garden journey</p>
+        <p className="text-sm text-muted-foreground">Join Canopy and start your garden journey</p>
       </div>
 
       {/* Form */}
