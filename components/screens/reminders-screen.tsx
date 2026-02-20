@@ -5,6 +5,7 @@ import { useApp } from "@/lib/app-context"
 import { BottomNav } from "@/components/bottom-nav"
 import { IconChevronLeft, IconPlus, IconDroplet, IconScissors, IconSun, IconPill } from "@tabler/icons-react"
 import Image from "next/image"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 const reminderTabs = ["Upcoming", "Done"]
 
@@ -91,6 +92,15 @@ export function RemindersScreen() {
           <button className="w-10 h-10 rounded-full bg-primary flex items-center justify-center" aria-label="Add reminder">
             <IconPlus size={20} className="text-primary-foreground" />
           </button>
+        </div>
+
+        {/* Reminder banner with mascot */}
+        <div className="mx-5 mb-4 p-3 rounded-2xl bg-blue-chip flex items-center gap-3">
+          <CanopyMascot pose="sleeping" size="small" />
+          <div className="flex-1">
+            <p className="text-xs font-semibold text-blue-chip-fg">4 upcoming reminders</p>
+            <p className="text-[11px] text-blue-chip-fg/70 mt-0.5">Stay on top of your plant care</p>
+          </div>
         </div>
 
         {/* Tabs */}

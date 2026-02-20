@@ -15,6 +15,7 @@ import {
   IconDotsVertical,
 } from "@tabler/icons-react"
 import Image from "next/image"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 export function HomeScreen() {
   const { navigate, setSelectedPlant } = useApp()
@@ -27,9 +28,14 @@ export function HomeScreen() {
       <div className="flex-1 overflow-y-auto no-scrollbar pb-4">
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-3 pb-4">
-          <div>
-            <p className="text-sm text-muted-foreground">Good morning,</p>
-            <h1 className="text-xl font-bold text-foreground">Gardener</h1>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-mint flex items-center justify-center">
+              <CanopyMascot pose="happy" size="tiny" />
+            </div>
+            <div>
+              <p className="text-sm text-muted-foreground">Good morning,</p>
+              <h1 className="text-xl font-bold text-foreground">Gardener</h1>
+            </div>
           </div>
           <button
             onClick={() => navigate("notifications")}
@@ -58,15 +64,18 @@ export function HomeScreen() {
                 <p className="text-3xl font-bold">28°C</p>
                 <p className="text-sm text-primary-foreground/80">Partly cloudy</p>
               </div>
-              <div className="flex gap-4">
-                <div className="flex flex-col items-center gap-1">
-                  <IconDroplet size={16} className="text-primary-foreground/70" />
-                  <span className="text-xs">65%</span>
+              <div className="flex items-end gap-3">
+                <div className="flex gap-4">
+                  <div className="flex flex-col items-center gap-1">
+                    <IconDroplet size={16} className="text-primary-foreground/70" />
+                    <span className="text-xs">65%</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1">
+                    <IconTemperature size={16} className="text-primary-foreground/70" />
+                    <span className="text-xs">28°</span>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center gap-1">
-                  <IconTemperature size={16} className="text-primary-foreground/70" />
-                  <span className="text-xs">28°</span>
-                </div>
+                <CanopyMascot pose="waving" size="medium" className="mb-[-16px] mr-[-8px]" />
               </div>
             </div>
           </div>
@@ -152,7 +161,10 @@ export function HomeScreen() {
         {/* Needs Attention */}
         <div className="px-5 mb-5">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-base font-semibold text-foreground">Needs Attention</h3>
+            <div className="flex items-center gap-2">
+              <CanopyMascot pose="sad" size="tiny" />
+              <h3 className="text-base font-semibold text-foreground">Needs Attention</h3>
+            </div>
             <button className="text-xs text-primary font-medium flex items-center gap-0.5">
               See All <IconChevronRight size={14} />
             </button>

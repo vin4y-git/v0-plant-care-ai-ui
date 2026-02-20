@@ -15,6 +15,7 @@ import {
   IconShield,
 } from "@tabler/icons-react"
 import Image from "next/image"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 const tabs = ["Information", "Treatment", "Prevention"]
 
@@ -74,10 +75,13 @@ export function ScanResultScreen() {
           </div>
         </div>
 
-        {/* Title */}
-        <div className="px-5 mb-4">
-          <h2 className="text-xl font-bold text-foreground">Leaf Spot Disease</h2>
-          <p className="text-sm text-muted-foreground mt-0.5">Fungal infection</p>
+        {/* Title with mascot */}
+        <div className="px-5 mb-4 flex items-center gap-3">
+          <CanopyMascot pose="worried" size="small" />
+          <div>
+            <h2 className="text-xl font-bold text-foreground">Leaf Spot Disease</h2>
+            <p className="text-sm text-muted-foreground mt-0.5">Fungal infection</p>
+          </div>
         </div>
 
         {/* Tabs */}

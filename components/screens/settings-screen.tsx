@@ -14,6 +14,7 @@ import {
   IconLogout,
   IconCamera,
 } from "@tabler/icons-react"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 const settingGroups = [
   {
@@ -58,8 +59,8 @@ export function SettingsScreen() {
         {/* Profile card */}
         <div className="mx-5 mb-6 p-4 rounded-2xl bg-secondary border border-primary/10 flex items-center gap-4">
           <div className="relative">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-              <IconUser size={32} className="text-primary" />
+            <div className="w-16 h-16 rounded-2xl bg-mint flex items-center justify-center overflow-hidden">
+              <CanopyMascot pose="happy" size="medium" />
             </div>
             <button className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center" aria-label="Change photo">
               <IconCamera size={12} className="text-primary-foreground" />

@@ -19,6 +19,7 @@ import {
   IconChevronRight,
 } from "@tabler/icons-react"
 import Image from "next/image"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 const tabOptions = ["Information", "Plant Care", "Features"]
 
@@ -103,8 +104,8 @@ export function PlantDetailScreen() {
             <h2 className="text-xl font-bold text-foreground">{plant.name}</h2>
             <p className="text-sm text-muted-foreground mt-0.5">{plant.subtitle}</p>
           </div>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted text-sm font-medium text-muted-foreground">
-            <IconRobot size={16} />
+          <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-mint text-sm font-medium text-foreground">
+            <CanopyMascot pose="chatting" size="tiny" circular />
             AI Chat
           </button>
         </div>

@@ -10,8 +10,18 @@ import {
   IconBug,
   IconDroplet,
 } from "@tabler/icons-react"
+import { CanopyMascot, type CanopyPose } from "@/components/canopy-mascot"
 
-const notifications = [
+const notifications: {
+  id: string
+  icon: typeof IconAlertTriangle
+  iconColor: string
+  title: string
+  description: string
+  time: string
+  unread: boolean
+  mascotPose: CanopyPose
+}[] = [
   {
     id: "1",
     icon: IconAlertTriangle,
@@ -20,6 +30,7 @@ const notifications = [
     description: "High humidity levels detected. Your Monstera may be at risk for fungal infection.",
     time: "2 min ago",
     unread: true,
+    mascotPose: "worried",
   },
   {
     id: "2",
@@ -29,6 +40,7 @@ const notifications = [
     description: "Heavy rain expected tomorrow. Consider moving outdoor plants to covered area.",
     time: "1 hour ago",
     unread: true,
+    mascotPose: "sad",
   },
   {
     id: "3",
@@ -38,6 +50,7 @@ const notifications = [
     description: "Time to water your Snake Plant and Areca Palm.",
     time: "3 hours ago",
     unread: false,
+    mascotPose: "watering",
   },
   {
     id: "4",
@@ -47,6 +60,7 @@ const notifications = [
     description: "Your Aloe Vera has recovered from the leaf spot disease. Great job!",
     time: "Yesterday",
     unread: false,
+    mascotPose: "celebrating",
   },
   {
     id: "5",
@@ -56,6 +70,7 @@ const notifications = [
     description: "Possible aphid infestation detected on your Bonsai Tree during last scan.",
     time: "Yesterday",
     unread: false,
+    mascotPose: "detective",
   },
   {
     id: "6",
@@ -65,6 +80,7 @@ const notifications = [
     description: "Indoor humidity dropped below 40%. Consider using a humidifier for your ferns.",
     time: "2 days ago",
     unread: false,
+    mascotPose: "sad",
   },
 ]
 
@@ -94,8 +110,8 @@ export function NotificationsScreen() {
                   : "bg-card border-border"
               }`}
             >
-              <div className={`w-10 h-10 rounded-xl ${notif.iconColor} flex items-center justify-center flex-shrink-0`}>
-                <notif.icon size={20} />
+              <div className="w-10 h-10 rounded-xl bg-mint flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <CanopyMascot pose={notif.mascotPose} size="small" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">

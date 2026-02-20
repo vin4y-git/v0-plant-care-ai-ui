@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import { useApp } from "@/lib/app-context"
-import { IconLeaf, IconEye, IconEyeOff, IconMail, IconLock, IconUser, IconMapPin, IconChevronLeft } from "@tabler/icons-react"
+import { IconEye, IconEyeOff, IconMail, IconLock, IconUser, IconMapPin, IconChevronLeft } from "@tabler/icons-react"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 export function SignUpScreen() {
   const { navigate, goBack } = useApp()
@@ -17,9 +18,7 @@ export function SignUpScreen() {
 
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-            <IconLeaf size={20} className="text-primary-foreground" />
-          </div>
+          <CanopyMascot pose="happy" size="small" />
           <h1 className="text-xl font-bold text-foreground">Create Account</h1>
         </div>
         <p className="text-sm text-muted-foreground">Join PlantCare AI and start your garden journey</p>

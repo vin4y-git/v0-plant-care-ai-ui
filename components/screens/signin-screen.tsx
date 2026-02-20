@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import { useApp } from "@/lib/app-context"
-import { IconLeaf, IconEye, IconEyeOff, IconMail, IconLock } from "@tabler/icons-react"
+import { IconEye, IconEyeOff, IconMail, IconLock } from "@tabler/icons-react"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 export function SignInScreen() {
   const { navigate } = useApp()
@@ -10,11 +11,9 @@ export function SignInScreen() {
 
   return (
     <div className="flex flex-col h-full bg-background px-6 pt-12 pb-8">
-      {/* Logo */}
+      {/* Mascot and title */}
       <div className="flex flex-col items-center gap-3 mb-10">
-        <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
-          <IconLeaf size={32} className="text-primary-foreground" />
-        </div>
+        <CanopyMascot pose="waving" size="large" animation="blink" />
         <h1 className="text-xl font-bold text-foreground">Welcome Back</h1>
         <p className="text-sm text-muted-foreground">Sign in to continue to PlantCare AI</p>
       </div>

@@ -6,6 +6,7 @@ import { plants } from "@/lib/plant-data"
 import { BottomNav } from "@/components/bottom-nav"
 import { IconChevronLeft, IconDotsVertical } from "@tabler/icons-react"
 import Image from "next/image"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 const tabs = ["Identify", "Plant Care", "Diagnose"]
 
@@ -25,6 +26,15 @@ export function GardenScreen() {
           <button className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="More options">
             <IconDotsVertical size={20} className="text-foreground" />
           </button>
+        </div>
+
+        {/* Garden Health Banner */}
+        <div className="mx-5 mb-4 p-4 rounded-2xl bg-secondary border border-primary/10 flex items-center justify-between">
+          <div className="flex-1">
+            <p className="text-sm font-semibold text-foreground">Garden Health: Great</p>
+            <p className="text-xs text-muted-foreground mt-0.5">All your plants are thriving</p>
+          </div>
+          <CanopyMascot pose="celebrating" size="small" animation="bob" />
         </div>
 
         {/* Tabs */}

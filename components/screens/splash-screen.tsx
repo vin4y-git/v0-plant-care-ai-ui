@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import { useApp } from "@/lib/app-context"
-import { IconLeaf } from "@tabler/icons-react"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 export function SplashScreen() {
   const { navigate } = useApp()
@@ -21,10 +21,12 @@ export function SplashScreen() {
       <div className="absolute bottom-[-80px] left-[-80px] w-[250px] h-[250px] rounded-full bg-primary/5" />
       <div className="absolute top-[30%] left-[-40px] w-[100px] h-[100px] rounded-full bg-primary/8" />
 
-      {/* Logo */}
-      <div className="flex flex-col items-center gap-4 animate-in fade-in zoom-in duration-700">
-        <div className="w-24 h-24 rounded-[1.75rem] bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
-          <IconLeaf size={48} className="text-primary-foreground" />
+      {/* Mascot and branding */}
+      <div className="flex flex-col items-center gap-5 animate-in fade-in zoom-in duration-700">
+        {/* Soft mint glow circle behind mascot */}
+        <div className="relative">
+          <div className="absolute inset-[-20px] rounded-full bg-primary/8 blur-2xl" />
+          <CanopyMascot pose="celebrating" size="xl" animation="bob" />
         </div>
         <div className="text-center">
           <h1 className="text-2xl font-bold text-foreground tracking-tight">PlantCare AI</h1>

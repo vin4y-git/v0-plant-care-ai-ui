@@ -2,26 +2,27 @@
 
 import { useState } from "react"
 import { useApp } from "@/lib/app-context"
-import { IconScan, IconPlant, IconMessageChatbot, IconChevronRight } from "@tabler/icons-react"
+import { IconChevronRight } from "@tabler/icons-react"
+import { CanopyMascot, type CanopyPose } from "@/components/canopy-mascot"
 
-const slides = [
+const slides: { pose: CanopyPose; title: string; description: string; bgColor: string }[] = [
   {
-    icon: IconScan,
+    pose: "detective",
     title: "Detect Plant Diseases",
     description: "Snap a photo of your plant and our AI will instantly identify diseases and suggest treatments.",
-    color: "bg-pink-chip text-pink-chip-fg",
+    bgColor: "bg-pink-chip",
   },
   {
-    icon: IconPlant,
+    pose: "watering",
     title: "Manage Your Garden",
     description: "Track all your plants, set reminders for watering, and monitor growth over time.",
-    color: "bg-green-chip text-green-chip-fg",
+    bgColor: "bg-green-chip",
   },
   {
-    icon: IconMessageChatbot,
+    pose: "chatting",
     title: "AI Plant Expert",
     description: "Chat with our AI assistant to get personalized advice for your specific plants and conditions.",
-    color: "bg-blue-chip text-blue-chip-fg",
+    bgColor: "bg-blue-chip",
   },
 ]
 
@@ -53,8 +54,8 @@ export function OnboardingScreen() {
 
       {/* Illustration area */}
       <div className="flex-1 flex flex-col items-center justify-center gap-8">
-        <div className={`w-32 h-32 rounded-[2rem] ${slide.color} flex items-center justify-center`}>
-          <slide.icon size={64} />
+        <div className={`w-[180px] h-[180px] rounded-[2.5rem] ${slide.bgColor} flex items-center justify-center`}>
+          <CanopyMascot pose={slide.pose} size="xl" animation="blink" />
         </div>
 
         <div className="text-center px-4">

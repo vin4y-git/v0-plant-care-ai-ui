@@ -16,6 +16,7 @@ import {
   IconCheck,
   IconAlertTriangle,
 } from "@tabler/icons-react"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 const detectionTypes = [
   { icon: IconBug, label: "Disease", active: true },
@@ -71,8 +72,8 @@ export function ScanScreen() {
           {/* Scanning line */}
           <div className="absolute inset-x-12 top-1/3 h-0.5 bg-primary/60 animate-pulse" />
 
-          <div className="flex flex-col items-center gap-2 text-primary-foreground/60">
-            <IconScan size={48} />
+          <div className="flex flex-col items-center gap-3 text-primary-foreground/60">
+            <CanopyMascot pose="detective" size="large" animation="rock" />
             <p className="text-sm font-medium">Point camera at your plant</p>
           </div>
         </div>
@@ -118,8 +119,8 @@ export function ScanScreen() {
             </div>
 
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 rounded-2xl bg-mint flex items-center justify-center">
-                <IconLeaf size={32} className="text-primary" />
+              <div className="w-16 h-16 rounded-2xl bg-mint flex items-center justify-center overflow-hidden">
+                <CanopyMascot pose="worried" size="medium" />
               </div>
               <div>
                 <p className="text-base font-semibold text-foreground">Leaf Spot Disease</p>

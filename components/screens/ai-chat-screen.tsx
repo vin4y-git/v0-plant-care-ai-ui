@@ -5,12 +5,11 @@ import { useApp } from "@/lib/app-context"
 import { BottomNav } from "@/components/bottom-nav"
 import {
   IconChevronLeft,
-  IconRobot,
   IconSend,
   IconPhotoPlus,
   IconMicrophone,
-  IconLeaf,
 } from "@tabler/icons-react"
+import { CanopyMascot } from "@/components/canopy-mascot"
 
 interface Message {
   id: string
@@ -68,8 +67,8 @@ export function AIChatScreen() {
         <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Go back">
           <IconChevronLeft size={20} className="text-foreground" />
         </button>
-        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-          <IconRobot size={20} className="text-primary" />
+        <div className="w-10 h-10 rounded-full bg-mint flex items-center justify-center overflow-hidden">
+          <CanopyMascot pose="chatting" size="small" circular />
         </div>
         <div>
           <h1 className="text-sm font-bold text-foreground">PlantCare AI</h1>
@@ -86,8 +85,8 @@ export function AIChatScreen() {
           >
             <div className="flex items-end gap-2 max-w-[85%]">
               {msg.isBot && (
-                <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <IconLeaf size={14} className="text-primary" />
+                <div className="w-7 h-7 rounded-full bg-mint flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <CanopyMascot pose="watering" size="tiny" circular />
                 </div>
               )}
               <div
@@ -103,7 +102,13 @@ export function AIChatScreen() {
           </div>
         ))}
 
-        {/* Quick questions */}
+        {/* Empty state mascot and quick questions */}
+        {messages.length <= 1 && (
+          <div className="flex flex-col items-center gap-3 mt-4 mb-2">
+            <CanopyMascot pose="chatting" size="large" animation="blink" />
+            <p className="text-xs text-muted-foreground">Ask me anything about plants</p>
+          </div>
+        )}
         {messages.length <= 1 && (
           <div className="flex flex-wrap gap-2 mt-2">
             {quickQuestions.map((q) => (
