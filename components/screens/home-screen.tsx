@@ -4,16 +4,16 @@ import { useApp } from "@/lib/app-context"
 import { plants } from "@/lib/plant-data"
 import { BottomNav } from "@/components/bottom-nav"
 import {
-  Bell,
-  CloudSun,
-  AlertTriangle,
-  Scan,
-  BarChart3,
-  Droplets,
-  Thermometer,
-  ChevronRight,
-  MoreVertical,
-} from "lucide-react"
+  IconBell,
+  IconCloudSun,
+  IconMessageChatbot,
+  IconScan,
+  IconChartBar,
+  IconDroplet,
+  IconTemperature,
+  IconChevronRight,
+  IconDotsVertical,
+} from "@tabler/icons-react"
 import Image from "next/image"
 
 export function HomeScreen() {
@@ -36,7 +36,7 @@ export function HomeScreen() {
             className="w-10 h-10 rounded-full bg-muted flex items-center justify-center relative"
             aria-label="Notifications"
           >
-            <Bell className="w-5 h-5 text-foreground" />
+            <IconBell size={20} className="text-foreground" />
             <div className="absolute top-2 right-2 w-2.5 h-2.5 bg-destructive rounded-full border-2 border-background" />
           </button>
         </div>
@@ -46,7 +46,7 @@ export function HomeScreen() {
           <div className="bg-primary rounded-2xl p-4 text-primary-foreground">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <CloudSun className="w-5 h-5" />
+                <IconCloudSun size={20} />
                 <span className="text-sm font-medium">Today&apos;s Weather</span>
               </div>
               <div className="px-2.5 py-1 bg-primary-foreground/20 rounded-full text-xs font-medium">
@@ -60,11 +60,11 @@ export function HomeScreen() {
               </div>
               <div className="flex gap-4">
                 <div className="flex flex-col items-center gap-1">
-                  <Droplets className="w-4 h-4 text-primary-foreground/70" />
+                  <IconDroplet size={16} className="text-primary-foreground/70" />
                   <span className="text-xs">65%</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <Thermometer className="w-4 h-4 text-primary-foreground/70" />
+                  <IconTemperature size={16} className="text-primary-foreground/70" />
                   <span className="text-xs">28°</span>
                 </div>
               </div>
@@ -77,7 +77,7 @@ export function HomeScreen() {
           <div className="bg-card rounded-2xl p-4 border border-border">
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-sm font-semibold text-foreground">Farm Health Score</h3>
-              <BarChart3 className="w-4 h-4 text-muted-foreground" />
+              <IconChartBar size={16} className="text-muted-foreground" />
             </div>
             <div className="flex items-center gap-4">
               <div className="relative w-20 h-20">
@@ -124,7 +124,7 @@ export function HomeScreen() {
               className="flex-1 flex flex-col items-center gap-2 py-4 rounded-2xl bg-secondary border border-primary/10"
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Scan className="w-5 h-5 text-primary" />
+                <IconScan size={20} className="text-primary" />
               </div>
               <span className="text-xs font-medium text-foreground">Scan Plant</span>
             </button>
@@ -133,7 +133,7 @@ export function HomeScreen() {
               className="flex-1 flex flex-col items-center gap-2 py-4 rounded-2xl bg-secondary border border-primary/10"
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-primary" />
+                <IconChartBar size={20} className="text-primary" />
               </div>
               <span className="text-xs font-medium text-foreground">My Garden</span>
             </button>
@@ -142,7 +142,7 @@ export function HomeScreen() {
               className="flex-1 flex flex-col items-center gap-2 py-4 rounded-2xl bg-secondary border border-primary/10"
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                <AlertTriangle className="w-5 h-5 text-primary" />
+                <IconMessageChatbot size={20} className="text-primary" />
               </div>
               <span className="text-xs font-medium text-foreground">AI Chat</span>
             </button>
@@ -154,7 +154,7 @@ export function HomeScreen() {
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-foreground">Needs Attention</h3>
             <button className="text-xs text-primary font-medium flex items-center gap-0.5">
-              See All <ChevronRight className="w-3.5 h-3.5" />
+              See All <IconChevronRight size={14} />
             </button>
           </div>
           <div className="flex gap-3 overflow-x-auto no-scrollbar">
@@ -190,7 +190,7 @@ export function HomeScreen() {
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-foreground">Recent Scans</h3>
             <button className="text-xs text-primary font-medium flex items-center gap-0.5">
-              See All <ChevronRight className="w-3.5 h-3.5" />
+              See All <IconChevronRight size={14} />
             </button>
           </div>
           <div className="flex flex-col gap-3">
@@ -216,7 +216,7 @@ export function HomeScreen() {
                   <p className="text-sm font-semibold text-foreground">{plant.name}</p>
                   <p className="text-xs text-muted-foreground mt-0.5">Healthy - Scanned 2h ago</p>
                 </div>
-                <MoreVertical className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                <IconDotsVertical size={16} className="text-muted-foreground flex-shrink-0" />
               </button>
             ))}
           </div>

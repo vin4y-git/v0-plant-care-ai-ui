@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useApp } from "@/lib/app-context"
 import { BottomNav } from "@/components/bottom-nav"
-import { ChevronLeft, Plus, Droplets, Scissors, Sun, Pill } from "lucide-react"
+import { IconChevronLeft, IconPlus, IconDroplet, IconScissors, IconSun, IconPill } from "@tabler/icons-react"
 import Image from "next/image"
 
 const reminderTabs = ["Upcoming", "Done"]
@@ -14,7 +14,7 @@ const reminders = [
     plant: "Areca Palm",
     image: "/images/areca-palm.jpg",
     type: "Water",
-    icon: Droplets,
+    icon: IconDroplet,
     iconColor: "bg-blue-chip text-blue-chip-fg",
     time: "Today, 8:00 AM",
     done: false,
@@ -24,7 +24,7 @@ const reminders = [
     plant: "Bonsai Tree",
     image: "/images/bonsai-tree.jpg",
     type: "Prune",
-    icon: Scissors,
+    icon: IconScissors,
     iconColor: "bg-orange-chip text-orange-chip-fg",
     time: "Today, 10:00 AM",
     done: false,
@@ -34,7 +34,7 @@ const reminders = [
     plant: "Snake Plant",
     image: "/images/snake-plant.jpg",
     type: "Sunlight",
-    icon: Sun,
+    icon: IconSun,
     iconColor: "bg-pink-chip text-pink-chip-fg",
     time: "Tomorrow, 7:00 AM",
     done: false,
@@ -44,7 +44,7 @@ const reminders = [
     plant: "Monstera",
     image: "/images/monstera.jpg",
     type: "Fertilize",
-    icon: Pill,
+    icon: IconPill,
     iconColor: "bg-green-chip text-green-chip-fg",
     time: "Feb 22, 9:00 AM",
     done: false,
@@ -54,7 +54,7 @@ const reminders = [
     plant: "Aloe Vera",
     image: "/images/aloe-vera.jpg",
     type: "Water",
-    icon: Droplets,
+    icon: IconDroplet,
     iconColor: "bg-blue-chip text-blue-chip-fg",
     time: "Yesterday, 8:00 AM",
     done: true,
@@ -64,7 +64,7 @@ const reminders = [
     plant: "Fern",
     image: "/images/fern.jpg",
     type: "Mist",
-    icon: Droplets,
+    icon: IconDroplet,
     iconColor: "bg-blue-chip text-blue-chip-fg",
     time: "Yesterday, 6:00 PM",
     done: true,
@@ -85,11 +85,11 @@ export function RemindersScreen() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-3 pb-4">
           <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Go back">
-            <ChevronLeft className="w-5 h-5 text-foreground" />
+            <IconChevronLeft size={20} className="text-foreground" />
           </button>
           <h1 className="text-lg font-bold text-foreground">Reminders</h1>
           <button className="w-10 h-10 rounded-full bg-primary flex items-center justify-center" aria-label="Add reminder">
-            <Plus className="w-5 h-5 text-primary-foreground" />
+            <IconPlus size={20} className="text-primary-foreground" />
           </button>
         </div>
 
@@ -130,7 +130,7 @@ export function RemindersScreen() {
                 <p className="text-sm font-semibold text-foreground">{reminder.plant}</p>
                 <div className="flex items-center gap-2 mt-1">
                   <div className={`w-6 h-6 rounded-lg ${reminder.iconColor} flex items-center justify-center`}>
-                    <reminder.icon className="w-3 h-3" />
+                    <reminder.icon size={12} />
                   </div>
                   <span className="text-xs text-muted-foreground">{reminder.type}</span>
                 </div>

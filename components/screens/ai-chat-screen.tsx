@@ -4,13 +4,13 @@ import { useState } from "react"
 import { useApp } from "@/lib/app-context"
 import { BottomNav } from "@/components/bottom-nav"
 import {
-  ChevronLeft,
-  Bot,
-  Send,
-  ImagePlus,
-  Mic,
-  Leaf,
-} from "lucide-react"
+  IconChevronLeft,
+  IconRobot,
+  IconSend,
+  IconPhotoPlus,
+  IconMicrophone,
+  IconLeaf,
+} from "@tabler/icons-react"
 
 interface Message {
   id: string
@@ -66,10 +66,10 @@ export function AIChatScreen() {
       {/* Header */}
       <div className="flex items-center gap-3 px-5 pt-3 pb-3 border-b border-border">
         <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Go back">
-          <ChevronLeft className="w-5 h-5 text-foreground" />
+          <IconChevronLeft size={20} className="text-foreground" />
         </button>
         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-          <Bot className="w-5 h-5 text-primary" />
+          <IconRobot size={20} className="text-primary" />
         </div>
         <div>
           <h1 className="text-sm font-bold text-foreground">PlantCare AI</h1>
@@ -87,7 +87,7 @@ export function AIChatScreen() {
             <div className="flex items-end gap-2 max-w-[85%]">
               {msg.isBot && (
                 <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Leaf className="w-3.5 h-3.5 text-primary" />
+                  <IconLeaf size={14} className="text-primary" />
                 </div>
               )}
               <div
@@ -123,7 +123,7 @@ export function AIChatScreen() {
       <div className="px-5 pb-3 pt-2 border-t border-border">
         <div className="flex items-center gap-2">
           <button className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0" aria-label="Attach image">
-            <ImagePlus className="w-5 h-5 text-muted-foreground" />
+            <IconPhotoPlus size={20} className="text-muted-foreground" />
           </button>
           <div className="flex-1 flex items-center bg-muted rounded-2xl px-4 py-2.5">
             <input
@@ -136,14 +136,14 @@ export function AIChatScreen() {
             />
           </div>
           <button className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0" aria-label="Voice input">
-            <Mic className="w-5 h-5 text-muted-foreground" />
+            <IconMicrophone size={20} className="text-muted-foreground" />
           </button>
           <button
             onClick={() => sendMessage(input)}
             className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 active:scale-95 transition-transform"
             aria-label="Send message"
           >
-            <Send className="w-5 h-5 text-primary-foreground" />
+            <IconSend size={20} className="text-primary-foreground" />
           </button>
         </div>
       </div>

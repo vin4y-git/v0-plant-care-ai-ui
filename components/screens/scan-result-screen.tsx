@@ -3,28 +3,28 @@
 import { useState } from "react"
 import { useApp } from "@/lib/app-context"
 import {
-  ChevronLeft,
-  Bookmark,
-  Share2,
-  Sun,
-  Thermometer,
-  Droplets,
-  Check,
-  AlertTriangle,
-  Leaf,
-  Shield,
-} from "lucide-react"
+  IconChevronLeft,
+  IconBookmark,
+  IconShare,
+  IconSun,
+  IconTemperature,
+  IconDroplet,
+  IconCheck,
+  IconAlertTriangle,
+  IconLeaf,
+  IconShield,
+} from "@tabler/icons-react"
 import Image from "next/image"
 
 const tabs = ["Information", "Treatment", "Prevention"]
 
 const conditions = [
-  { icon: Sun, label: "Severity", value: "Moderate", color: "bg-orange-chip text-orange-chip-fg" },
-  { icon: Thermometer, label: "Spread Risk", value: "Medium", color: "bg-pink-chip text-pink-chip-fg" },
-  { icon: Droplets, label: "Moisture", value: "High", color: "bg-blue-chip text-blue-chip-fg" },
-  { icon: Leaf, label: "Affected", value: "Leaves", color: "bg-green-chip text-green-chip-fg" },
-  { icon: Shield, label: "Treatable", value: "Yes", color: "bg-green-chip text-green-chip-fg" },
-  { icon: AlertTriangle, label: "Urgency", value: "Soon", color: "bg-orange-chip text-orange-chip-fg" },
+  { icon: IconSun, label: "Severity", value: "Moderate", color: "bg-orange-chip text-orange-chip-fg" },
+  { icon: IconTemperature, label: "Spread Risk", value: "Medium", color: "bg-pink-chip text-pink-chip-fg" },
+  { icon: IconDroplet, label: "Moisture", value: "High", color: "bg-blue-chip text-blue-chip-fg" },
+  { icon: IconLeaf, label: "Affected", value: "Leaves", color: "bg-green-chip text-green-chip-fg" },
+  { icon: IconShield, label: "Treatable", value: "Yes", color: "bg-green-chip text-green-chip-fg" },
+  { icon: IconAlertTriangle, label: "Urgency", value: "Soon", color: "bg-orange-chip text-orange-chip-fg" },
 ]
 
 export function ScanResultScreen() {
@@ -37,15 +37,15 @@ export function ScanResultScreen() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-3 pb-2">
           <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Go back">
-            <ChevronLeft className="w-5 h-5 text-foreground" />
+            <IconChevronLeft size={20} className="text-foreground" />
           </button>
           <h1 className="text-lg font-bold text-foreground">Scan Result</h1>
           <div className="flex items-center gap-2">
             <button className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Share">
-              <Share2 className="w-4 h-4 text-foreground" />
+              <IconShare size={16} className="text-foreground" />
             </button>
             <button className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Bookmark">
-              <Bookmark className="w-4 h-4 text-foreground" />
+              <IconBookmark size={16} className="text-foreground" />
             </button>
           </div>
         </div>
@@ -65,11 +65,11 @@ export function ScanResultScreen() {
         {/* Disease info chips */}
         <div className="flex items-center gap-2 px-5 mb-3">
           <div className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
-            <Check className="w-3 h-3" />
+            <IconCheck size={12} />
             94% match
           </div>
           <div className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-orange-chip text-orange-chip-fg text-xs font-medium">
-            <AlertTriangle className="w-3 h-3" />
+            <IconAlertTriangle size={12} />
             Moderate severity
           </div>
         </div>
@@ -106,7 +106,7 @@ export function ScanResultScreen() {
                 className="flex flex-col items-center gap-1.5 p-3 rounded-2xl bg-card border border-border"
               >
                 <div className={`w-9 h-9 rounded-xl ${condition.color} flex items-center justify-center`}>
-                  <condition.icon className="w-4 h-4" />
+                  <condition.icon size={16} />
                 </div>
                 <span className="text-xs font-semibold text-foreground">{condition.value}</span>
                 <span className="text-[10px] text-muted-foreground">{condition.label}</span>
@@ -154,7 +154,7 @@ export function ScanResultScreen() {
         {/* Save button */}
         <div className="px-5 pb-6">
           <button className="w-full py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-base flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
-            <Bookmark className="w-5 h-5" />
+            <IconBookmark size={20} />
             Save to History
           </button>
         </div>

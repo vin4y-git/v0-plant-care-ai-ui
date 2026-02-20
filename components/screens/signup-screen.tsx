@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useApp } from "@/lib/app-context"
-import { Leaf, Eye, EyeOff, Mail, Lock, User, MapPin, ChevronLeft } from "lucide-react"
+import { IconLeaf, IconEye, IconEyeOff, IconMail, IconLock, IconUser, IconMapPin, IconChevronLeft } from "@tabler/icons-react"
 
 export function SignUpScreen() {
   const { navigate, goBack } = useApp()
@@ -12,13 +12,13 @@ export function SignUpScreen() {
     <div className="flex flex-col h-full bg-background px-6 pt-4 pb-8">
       {/* Header */}
       <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center mb-4" aria-label="Go back">
-        <ChevronLeft className="w-5 h-5 text-foreground" />
+        <IconChevronLeft size={20} className="text-foreground" />
       </button>
 
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-            <Leaf className="w-5 h-5 text-primary-foreground" />
+            <IconLeaf size={20} className="text-primary-foreground" />
           </div>
           <h1 className="text-xl font-bold text-foreground">Create Account</h1>
         </div>
@@ -28,7 +28,7 @@ export function SignUpScreen() {
       {/* Form */}
       <div className="flex flex-col gap-4">
         <div className="relative">
-          <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <IconUser size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             placeholder="Full name"
@@ -37,7 +37,7 @@ export function SignUpScreen() {
         </div>
 
         <div className="relative">
-          <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <IconMail size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <input
             type="email"
             placeholder="Email address"
@@ -46,7 +46,7 @@ export function SignUpScreen() {
         </div>
 
         <div className="relative">
-          <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <IconLock size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Password"
@@ -57,12 +57,12 @@ export function SignUpScreen() {
             className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground"
             aria-label={showPassword ? "Hide password" : "Show password"}
           >
-            {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+            {showPassword ? <IconEyeOff size={20} /> : <IconEye size={20} />}
           </button>
         </div>
 
         <div className="relative">
-          <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <IconMapPin size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             placeholder="Location (optional)"

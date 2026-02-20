@@ -4,23 +4,23 @@ import { useState } from "react"
 import { useApp } from "@/lib/app-context"
 import { BottomNav } from "@/components/bottom-nav"
 import {
-  ChevronLeft,
-  Zap,
-  ImagePlus,
-  Camera,
-  ScanLine,
-  Bug,
-  Leaf,
-  Droplets,
-  X,
-  Check,
-  AlertTriangle,
-} from "lucide-react"
+  IconChevronLeft,
+  IconBolt,
+  IconPhotoPlus,
+  IconCamera,
+  IconScan,
+  IconBug,
+  IconLeaf,
+  IconDroplet,
+  IconX,
+  IconCheck,
+  IconAlertTriangle,
+} from "@tabler/icons-react"
 
 const detectionTypes = [
-  { icon: Bug, label: "Disease", active: true },
-  { icon: Leaf, label: "Identify", active: false },
-  { icon: Droplets, label: "Nutrient", active: false },
+  { icon: IconBug, label: "Disease", active: true },
+  { icon: IconLeaf, label: "Identify", active: false },
+  { icon: IconDroplet, label: "Nutrient", active: false },
 ]
 
 export function ScanScreen() {
@@ -33,11 +33,11 @@ export function ScanScreen() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-3 pb-4">
           <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Go back">
-            <ChevronLeft className="w-5 h-5 text-foreground" />
+            <IconChevronLeft size={20} className="text-foreground" />
           </button>
           <h1 className="text-lg font-bold text-foreground">Scan Plant</h1>
           <button className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Flash">
-            <Zap className="w-5 h-5 text-foreground" />
+            <IconBolt size={20} className="text-foreground" />
           </button>
         </div>
 
@@ -52,7 +52,7 @@ export function ScanScreen() {
                   : "bg-muted text-muted-foreground"
               }`}
             >
-              <type.icon className="w-4 h-4" />
+              <type.icon size={16} />
               {type.label}
             </button>
           ))}
@@ -72,7 +72,7 @@ export function ScanScreen() {
           <div className="absolute inset-x-12 top-1/3 h-0.5 bg-primary/60 animate-pulse" />
 
           <div className="flex flex-col items-center gap-2 text-primary-foreground/60">
-            <ScanLine className="w-12 h-12" />
+            <IconScan size={48} />
             <p className="text-sm font-medium">Point camera at your plant</p>
           </div>
         </div>
@@ -81,7 +81,7 @@ export function ScanScreen() {
         <div className="flex items-center justify-center gap-6 py-6 px-5">
           <button className="flex flex-col items-center gap-2">
             <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center">
-              <ImagePlus className="w-6 h-6 text-muted-foreground" />
+              <IconPhotoPlus size={24} className="text-muted-foreground" />
             </div>
             <span className="text-xs text-muted-foreground font-medium">Upload</span>
           </button>
@@ -91,12 +91,12 @@ export function ScanScreen() {
             className="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30 active:scale-95 transition-transform"
             aria-label="Take photo"
           >
-            <Camera className="w-8 h-8 text-primary-foreground" />
+            <IconCamera size={32} className="text-primary-foreground" />
           </button>
 
           <button className="flex flex-col items-center gap-2">
             <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center">
-              <Zap className="w-6 h-6 text-muted-foreground" />
+              <IconBolt size={24} className="text-muted-foreground" />
             </div>
             <span className="text-xs text-muted-foreground font-medium">Flash</span>
           </button>
@@ -113,23 +113,23 @@ export function ScanScreen() {
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-bold text-foreground">Scan Result</h3>
               <button onClick={() => setShowResult(false)} className="w-8 h-8 rounded-full bg-muted flex items-center justify-center" aria-label="Close results">
-                <X className="w-4 h-4 text-muted-foreground" />
+                <IconX size={16} className="text-muted-foreground" />
               </button>
             </div>
 
             <div className="flex items-center gap-4 mb-4">
               <div className="w-16 h-16 rounded-2xl bg-mint flex items-center justify-center">
-                <Leaf className="w-8 h-8 text-primary" />
+                <IconLeaf size={32} className="text-primary" />
               </div>
               <div>
                 <p className="text-base font-semibold text-foreground">Leaf Spot Disease</p>
                 <div className="flex items-center gap-2 mt-1">
                   <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                    <Check className="w-3 h-3" />
+                    <IconCheck size={12} />
                     94% confidence
                   </div>
                   <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-orange-chip text-orange-chip-fg text-xs font-medium">
-                    <AlertTriangle className="w-3 h-3" />
+                    <IconAlertTriangle size={12} />
                     Moderate
                   </div>
                 </div>

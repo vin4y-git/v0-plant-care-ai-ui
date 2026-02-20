@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import { useApp } from "@/lib/app-context"
-import { Leaf } from "lucide-react"
+import { IconLeaf } from "@tabler/icons-react"
 
 export function SplashScreen() {
   const { navigate } = useApp()
@@ -24,7 +24,7 @@ export function SplashScreen() {
       {/* Logo */}
       <div className="flex flex-col items-center gap-4 animate-in fade-in zoom-in duration-700">
         <div className="w-24 h-24 rounded-[1.75rem] bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
-          <Leaf className="w-12 h-12 text-primary-foreground" />
+          <IconLeaf size={48} className="text-primary-foreground" />
         </div>
         <div className="text-center">
           <h1 className="text-2xl font-bold text-foreground tracking-tight">PlantCare AI</h1>

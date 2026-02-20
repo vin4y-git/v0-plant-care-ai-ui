@@ -1,14 +1,20 @@
 "use client"
 
-import { Home, Clock, LayoutGrid, MessageCircle, Scan } from "lucide-react"
+import {
+  IconHome,
+  IconClock,
+  IconScan,
+  IconLayout2,
+  IconMessageChatbot,
+} from "@tabler/icons-react"
 import { useApp, type Screen } from "@/lib/app-context"
 
-const navItems: { icon: typeof Home; label: string; screen: Screen }[] = [
-  { icon: Home, label: "Home", screen: "home" },
-  { icon: Clock, label: "History", screen: "reminders" },
-  { icon: Scan, label: "Scan", screen: "scan" },
-  { icon: LayoutGrid, label: "Garden", screen: "garden" },
-  { icon: MessageCircle, label: "AI Chat", screen: "ai-chat" },
+const navItems: { icon: typeof IconHome; label: string; screen: Screen }[] = [
+  { icon: IconHome, label: "Home", screen: "home" },
+  { icon: IconClock, label: "History", screen: "reminders" },
+  { icon: IconScan, label: "Scan", screen: "scan" },
+  { icon: IconLayout2, label: "Garden", screen: "garden" },
+  { icon: IconMessageChatbot, label: "AI Chat", screen: "ai-chat" },
 ]
 
 export function BottomNav() {

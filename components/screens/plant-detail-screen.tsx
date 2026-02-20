@@ -4,28 +4,28 @@ import { useState } from "react"
 import { useApp } from "@/lib/app-context"
 import { plants } from "@/lib/plant-data"
 import {
-  ChevronLeft,
-  Share2,
-  Bookmark,
-  Bot,
-  Sun,
-  Thermometer,
-  Droplets,
-  Sprout,
-  TreeDeciduous,
-  Shield,
-  Plus,
-  MoreVertical,
-  ChevronRight,
-} from "lucide-react"
+  IconChevronLeft,
+  IconShare,
+  IconBookmark,
+  IconRobot,
+  IconSun,
+  IconTemperature,
+  IconDroplet,
+  IconPlant,
+  IconTree,
+  IconShield,
+  IconPlus,
+  IconDotsVertical,
+  IconChevronRight,
+} from "@tabler/icons-react"
 import Image from "next/image"
 
 const tabOptions = ["Information", "Plant Care", "Features"]
 
-const conditionIcons = [Sun, Thermometer, Droplets, Sprout, TreeDeciduous, Shield]
+const conditionIcons = [IconSun, IconTemperature, IconDroplet, IconPlant, IconTree, IconShield]
 
 function getConditionIcon(index: number) {
-  return conditionIcons[index] || Sun
+  return conditionIcons[index] || IconSun
 }
 
 function getConditionBg(color: string) {
@@ -55,15 +55,15 @@ export function PlantDetailScreen() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-3 pb-2">
           <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Go back">
-            <ChevronLeft className="w-5 h-5 text-foreground" />
+            <IconChevronLeft size={20} className="text-foreground" />
           </button>
           <h1 className="text-lg font-bold text-foreground">Plant</h1>
           <div className="flex items-center gap-2">
             <button className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Share">
-              <Share2 className="w-4 h-4 text-foreground" />
+              <IconShare size={16} className="text-foreground" />
             </button>
             <button className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Bookmark">
-              <Bookmark className="w-4 h-4 text-foreground" />
+              <IconBookmark size={16} className="text-foreground" />
             </button>
           </div>
         </div>
@@ -104,7 +104,7 @@ export function PlantDetailScreen() {
             <p className="text-sm text-muted-foreground mt-0.5">{plant.subtitle}</p>
           </div>
           <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted text-sm font-medium text-muted-foreground">
-            <Bot className="w-4 h-4" />
+            <IconRobot size={16} />
             AI Chat
           </button>
         </div>
@@ -122,7 +122,7 @@ export function PlantDetailScreen() {
                       className="flex flex-col items-center gap-1.5 p-3 rounded-2xl bg-card border border-border"
                     >
                       <div className={`w-9 h-9 rounded-xl ${getConditionBg(condition.color)} flex items-center justify-center`}>
-                        <Icon className="w-4 h-4" />
+                        <Icon size={16} />
                       </div>
                       <span className="text-xs font-semibold text-foreground">{condition.value}</span>
                       <span className="text-[10px] text-muted-foreground">{condition.label}</span>
@@ -137,7 +137,7 @@ export function PlantDetailScreen() {
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-sm font-semibold text-foreground">Photo Gallery</h3>
                 <button className="text-xs text-primary font-medium flex items-center gap-0.5">
-                  See All <ChevronRight className="w-3.5 h-3.5" />
+                  See All <IconChevronRight size={14} />
                 </button>
               </div>
               <div className="flex gap-3 overflow-x-auto no-scrollbar">
@@ -201,7 +201,7 @@ export function PlantDetailScreen() {
         {/* Add to garden button */}
         <div className="px-5 pb-6">
           <button className="w-full py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-base flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
-            <Plus className="w-5 h-5" />
+            <IconPlus size={20} />
             Add to garden
           </button>
         </div>

@@ -2,40 +2,40 @@
 
 import { useApp } from "@/lib/app-context"
 import {
-  ChevronLeft,
-  ChevronRight,
-  User,
-  Lock,
-  Bell,
-  Palette,
-  Globe,
-  HelpCircle,
-  Shield,
-  LogOut,
-  Camera,
-} from "lucide-react"
+  IconChevronLeft,
+  IconChevronRight,
+  IconUser,
+  IconLock,
+  IconBell,
+  IconPalette,
+  IconWorld,
+  IconHelp,
+  IconShield,
+  IconLogout,
+  IconCamera,
+} from "@tabler/icons-react"
 
 const settingGroups = [
   {
     title: "Account",
     items: [
-      { icon: User, label: "Edit Profile", color: "bg-blue-chip text-blue-chip-fg" },
-      { icon: Lock, label: "Change Password", color: "bg-orange-chip text-orange-chip-fg" },
-      { icon: Globe, label: "Language", color: "bg-green-chip text-green-chip-fg", value: "English" },
+      { icon: IconUser, label: "Edit Profile", color: "bg-blue-chip text-blue-chip-fg" },
+      { icon: IconLock, label: "Change Password", color: "bg-orange-chip text-orange-chip-fg" },
+      { icon: IconWorld, label: "Language", color: "bg-green-chip text-green-chip-fg", value: "English" },
     ],
   },
   {
     title: "Preferences",
     items: [
-      { icon: Bell, label: "Notifications", color: "bg-pink-chip text-pink-chip-fg" },
-      { icon: Palette, label: "Appearance", color: "bg-blue-chip text-blue-chip-fg", value: "Light" },
+      { icon: IconBell, label: "Notifications", color: "bg-pink-chip text-pink-chip-fg" },
+      { icon: IconPalette, label: "Appearance", color: "bg-blue-chip text-blue-chip-fg", value: "Light" },
     ],
   },
   {
     title: "Support",
     items: [
-      { icon: HelpCircle, label: "Help Center", color: "bg-green-chip text-green-chip-fg" },
-      { icon: Shield, label: "Privacy Policy", color: "bg-orange-chip text-orange-chip-fg" },
+      { icon: IconHelp, label: "Help Center", color: "bg-green-chip text-green-chip-fg" },
+      { icon: IconShield, label: "Privacy Policy", color: "bg-orange-chip text-orange-chip-fg" },
     ],
   },
 ]
@@ -49,7 +49,7 @@ export function SettingsScreen() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-3 pb-4">
           <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Go back">
-            <ChevronLeft className="w-5 h-5 text-foreground" />
+            <IconChevronLeft size={20} className="text-foreground" />
           </button>
           <h1 className="text-lg font-bold text-foreground">Settings</h1>
           <div className="w-10" />
@@ -59,10 +59,10 @@ export function SettingsScreen() {
         <div className="mx-5 mb-6 p-4 rounded-2xl bg-secondary border border-primary/10 flex items-center gap-4">
           <div className="relative">
             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-              <User className="w-8 h-8 text-primary" />
+              <IconUser size={32} className="text-primary" />
             </div>
             <button className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center" aria-label="Change photo">
-              <Camera className="w-3 h-3 text-primary-foreground" />
+              <IconCamera size={12} className="text-primary-foreground" />
             </button>
           </div>
           <div>
@@ -85,14 +85,14 @@ export function SettingsScreen() {
                     className="flex items-center gap-3 p-3.5 rounded-2xl bg-card border border-border active:bg-muted/50 transition-colors text-left"
                   >
                     <div className={`w-10 h-10 rounded-xl ${item.color} flex items-center justify-center`}>
-                      <item.icon className="w-5 h-5" />
+                      <item.icon size={20} />
                     </div>
                     <span className="flex-1 text-sm font-medium text-foreground">{item.label}</span>
                     <div className="flex items-center gap-1">
                       {"value" in item && (
                         <span className="text-xs text-muted-foreground">{item.value}</span>
                       )}
-                      <ChevronRight className="w-4 h-4 text-muted-foreground" />
+                      <IconChevronRight size={16} className="text-muted-foreground" />
                     </div>
                   </button>
                 ))}
@@ -106,7 +106,7 @@ export function SettingsScreen() {
             className="flex items-center gap-3 p-3.5 rounded-2xl bg-destructive/5 border border-destructive/10 active:bg-destructive/10 transition-colors"
           >
             <div className="w-10 h-10 rounded-xl bg-destructive/10 flex items-center justify-center">
-              <LogOut className="w-5 h-5 text-destructive" />
+              <IconLogout size={20} className="text-destructive" />
             </div>
             <span className="text-sm font-medium text-destructive">Log Out</span>
           </button>

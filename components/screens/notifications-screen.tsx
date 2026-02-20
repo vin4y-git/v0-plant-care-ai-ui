@@ -2,19 +2,19 @@
 
 import { useApp } from "@/lib/app-context"
 import {
-  ChevronLeft,
-  AlertTriangle,
-  CloudRain,
-  Clock,
-  CheckCircle2,
-  Bug,
-  Droplets,
-} from "lucide-react"
+  IconChevronLeft,
+  IconAlertTriangle,
+  IconCloudRain,
+  IconClock,
+  IconCircleCheck,
+  IconBug,
+  IconDroplet,
+} from "@tabler/icons-react"
 
 const notifications = [
   {
     id: "1",
-    icon: AlertTriangle,
+    icon: IconAlertTriangle,
     iconColor: "bg-orange-chip text-orange-chip-fg",
     title: "Disease Risk Alert",
     description: "High humidity levels detected. Your Monstera may be at risk for fungal infection.",
@@ -23,7 +23,7 @@ const notifications = [
   },
   {
     id: "2",
-    icon: CloudRain,
+    icon: IconCloudRain,
     iconColor: "bg-blue-chip text-blue-chip-fg",
     title: "Weather Warning",
     description: "Heavy rain expected tomorrow. Consider moving outdoor plants to covered area.",
@@ -32,7 +32,7 @@ const notifications = [
   },
   {
     id: "3",
-    icon: Clock,
+    icon: IconClock,
     iconColor: "bg-orange-chip text-orange-chip-fg",
     title: "Watering Reminder",
     description: "Time to water your Snake Plant and Areca Palm.",
@@ -41,7 +41,7 @@ const notifications = [
   },
   {
     id: "4",
-    icon: CheckCircle2,
+    icon: IconCircleCheck,
     iconColor: "bg-green-chip text-green-chip-fg",
     title: "Recovery Confirmed",
     description: "Your Aloe Vera has recovered from the leaf spot disease. Great job!",
@@ -50,7 +50,7 @@ const notifications = [
   },
   {
     id: "5",
-    icon: Bug,
+    icon: IconBug,
     iconColor: "bg-pink-chip text-pink-chip-fg",
     title: "Pest Detection",
     description: "Possible aphid infestation detected on your Bonsai Tree during last scan.",
@@ -59,7 +59,7 @@ const notifications = [
   },
   {
     id: "6",
-    icon: Droplets,
+    icon: IconDroplet,
     iconColor: "bg-blue-chip text-blue-chip-fg",
     title: "Humidity Alert",
     description: "Indoor humidity dropped below 40%. Consider using a humidifier for your ferns.",
@@ -77,7 +77,7 @@ export function NotificationsScreen() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-3 pb-4">
           <button onClick={goBack} className="w-10 h-10 rounded-full bg-muted flex items-center justify-center" aria-label="Go back">
-            <ChevronLeft className="w-5 h-5 text-foreground" />
+            <IconChevronLeft size={20} className="text-foreground" />
           </button>
           <h1 className="text-lg font-bold text-foreground">Notifications</h1>
           <button className="text-xs text-primary font-medium">Mark all read</button>
@@ -95,7 +95,7 @@ export function NotificationsScreen() {
               }`}
             >
               <div className={`w-10 h-10 rounded-xl ${notif.iconColor} flex items-center justify-center flex-shrink-0`}>
-                <notif.icon className="w-5 h-5" />
+                <notif.icon size={20} />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
